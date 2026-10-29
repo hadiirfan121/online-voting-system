@@ -41,31 +41,31 @@ public final class ChangePasswordDialog extends JDialog {
         root.setBackground(Theme.BACKGROUND);
         root.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        CardPanel card = new CardPanel();
-        card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
+        JPanel content = new JPanel();
+        content.setOpaque(false);
+        content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
 
         JLabel title = UiFactory.heading("Change administrator password");
         title.setAlignmentX(Component.LEFT_ALIGNMENT);
-        card.add(title);
-        card.add(Box.createVerticalStrut(6));
+        content.add(title);
+        content.add(strut(6));
         JLabel note = UiFactory.wrappedLabel(
                 "Use at least 8 characters with uppercase, lowercase, a number and a special character. "
                         + "The new password is stored as a salted PBKDF2 hash.",
                 360, Theme.MUTED, Theme.SMALL);
         note.setAlignmentX(Component.LEFT_ALIGNMENT);
-        card.add(note);
-        card.add(Box.createVerticalStrut(16));
+        content.add(note);
+        content.add(strut(16));
 
         errorLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        card.add(errorLabel);
-        card.add(Box.createVerticalStrut(4));
+        content.add(errorLabel);
+        content.add(strut(4));
 
-        card.add(UiFactory.labeledField("CURRENT PASSWORD", currentField));
-        card.add(Box.createVerticalStrut(12));
-        card.add(UiFactory.labeledField("NEW PASSWORD", newField));
-        card.add(Box.createVerticalStrut(12));
-        card.add(UiFactory.labeledField("CONFIRM NEW PASSWORD", confirmField));
-        card.add(Box.createVerticalStrut(18));
+        content.add(UiFactory.labeledField("CURRENT PASSWORD", currentField));
+        content.add(strut(12));
+        content.add(UiFactory.labeledField("NEW PASSWORD", newField));
+        content.add(strut(12));
+        content.add(UiFactory.labeledField("CONFIRM NEW PASSWORD", confirmField));
 
         JPanel buttons = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
         buttons.setOpaque(false);
@@ -74,8 +74,11 @@ public final class ChangePasswordDialog extends JDialog {
         updateButton.addActionListener(event -> updatePassword());
         buttons.add(cancel);
         buttons.add(updateButton);
-        buttons.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        card.add(buttons);
+
+        CardPanel card = new CardPanel();
+        card.setLayout(new BorderLayout(0, 18));
+        card.add(content, BorderLayout.CENTER);
+        card.add(buttons, BorderLayout.SOUTH);
 
         root.add(card, BorderLayout.CENTER);
         setContentPane(root);
@@ -84,9 +87,15 @@ public final class ChangePasswordDialog extends JDialog {
                 (ActionEvent event) -> dispose(),
                 KeyStroke.getKeyStroke("ESCAPE"),
                 JComponent.WHEN_IN_FOCUSED_WINDOW);
-        setPreferredSize(new Dimension(480, 480));
         pack();
         setLocationRelativeTo(frame);
+    }
+
+    private static JComponent strut(int height) {
+        JComponent strut = (JComponent) Box.createVerticalStrut(height);
+        strut.setAlignmentX(Component.LEFT_ALIGNMENT);
+        strut.setMaximumSize(new Dimension(0, height));
+        return strut;
     }
 
     private void updatePassword() {

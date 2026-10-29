@@ -71,6 +71,12 @@ Genuine screenshots captured from the running application are in
 The screenshots were produced by `com.votesecure.tools.ScreenshotTool` from an isolated
 demonstration database, so they contain sample names and sample ballots only.
 
+A 3-minute screen recording of the complete workflow is included as
+[`docs/VoteSecure_Demo_Recording.mp4`](docs/VoteSecure_Demo_Recording.mp4). It was captured
+from the running application at 1920×1094 with a fresh demonstration database and shows the
+administrator screens, report export, a voter casting one ballot, the sealed public results
+and the configuration locking after the first vote.
+
 ## Requirements
 
 | Item | Version used for this submission |
@@ -241,6 +247,7 @@ See [`docs/Test_Cases.md`](docs/Test_Cases.md) for the detailed test-case table.
 | [`docs/Project_Report.md`](docs/Project_Report.md) | Full academic report |
 | [`docs/Viva_Questions.md`](docs/Viva_Questions.md) | 25+ viva questions with answers and a short explanation script |
 | [`docs/Project_Presentation.pptx`](docs/Project_Presentation.pptx) | 9-slide presentation with real screenshots |
+| [`docs/VoteSecure_Demo_Recording.mp4`](docs/VoteSecure_Demo_Recording.mp4) | Screen recording of the full administrator and voter workflow |
 | [`reports/Sample_Results.txt`](reports/Sample_Results.txt) | Sample text report (labelled demonstration data) |
 | [`reports/Sample_Results.csv`](reports/Sample_Results.csv) | Sample CSV report (UTF-8 with BOM) |
 
