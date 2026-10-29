@@ -1,0 +1,28 @@
+# Maven build output
+target/
+
+# Local SQLite databases (never commit voter data)
+*.db
+*.db-shm
+*.db-wal
+data/
+.votesecure/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Tool metadata
+.qoder-office-pptx-locks/

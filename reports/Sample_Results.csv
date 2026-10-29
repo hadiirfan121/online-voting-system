@@ -1,0 +1,19 @@
+﻿Report,VoteSecure Election Results
+Notice,"SAMPLE / DEMONSTRATION REPORT - generated from an isolated demonstration database containing 10 sample voters, 3 sample candidates and 6 sample ballots. These are not real votes and this is not an official election result."
+Election ID,E2026
+Election Name,Student Council Election 2026
+Status,Closed
+Voting Starts,"15 Sep 2026, 09:30 AM"
+Voting Ends,"15 Oct 2026, 10:00 AM"
+Report Generated,"28 Oct 2026, 10:55 PM"
+Eligible Registered Voters,10
+Votes Cast,6
+Turnout (%),60.0
+Outcome,Winner: Aarav Sharma
+
+Candidate ID,Candidate Name,Political Party,Votes,Percentage of Valid Votes
+C001,Aarav Sharma,Progress Party,3,50.0
+C002,Meera Iyer,Unity Party,2,33.3
+C003,Rohan Verma,Reform Party,1,16.7
+
+Disclaimer,"This report was produced by VoteSecure, an academic local prototype. It is not an official, digitally certified election record and must not be used for a real public election."
